@@ -1,15 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
-  import Footer from "./components/Footer";
+import Marketplace from "./pages/Marketplace";
 
-function App() {
+export default function App() {
   return (
-    <div data-theme="light" className="min-h-screen bg-white">
+    <BrowserRouter>
       <Navbar />
-      <Home />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+      </Routes>
+
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
